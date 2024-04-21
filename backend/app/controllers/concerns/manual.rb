@@ -1,4 +1,4 @@
-module DefalutSuccess
+module ManualProcess
     extend ActiveSupport::Concern
   
 
