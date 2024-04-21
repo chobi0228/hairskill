@@ -10,7 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_21_073518) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_21_081348) do
+  create_table "calendars", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", comment: "ユーザID"
+    t.string "title", comment: "題名"
+    t.text "detail", comment: "詳細"
+    t.datetime "start_date", comment: "予定開始日時"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", comment: "ユーザID"
+    t.string "title", comment: "題名"
+    t.text "detail", comment: "詳細"
+    t.integer "status", default: 0, comment: "0:未回答,1:回答済"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "nices", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", comment: "Niceを送った人のID"
+    t.bigint "post_id", comment: "Niceを送った投稿のID"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", comment: "ユーザID"
+    t.integer "genre", comment: "ジャンル"
+    t.string "title", comment: "題名"
+    t.string "post_img_id", comment: "投稿画像"
+    t.text "detail", comment: "詳細"
+    t.text "biko", comment: "備考"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "relationships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "follower_id"
     t.bigint "follow_id"
