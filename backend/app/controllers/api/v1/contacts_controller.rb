@@ -1,4 +1,4 @@
-class Api::V1::UsersController < ApplicationController
+class Api::V1::ContactsController < ApplicationController
   def index
   end
 
@@ -18,11 +18,5 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def destroy
-  end
-
-  def followers
-  end
-
-  def follow
   end
 end
