@@ -1,6 +1,4 @@
-class User < ApplicationRecord
-    has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id"
-    has_many :passive_relationships, class_name: "Relationship", foreign_key: "follow_id"
-    has_many :follows, through: :active_relationships, source: :follow
-    has_many :followers, through: :passive_relationships, source: :follower
-  end
+class Relationship < ApplicationRecord
+    belongs_to :follows, class_name: "User"
+    belongs_to :followers, class_name: "User"
+end
