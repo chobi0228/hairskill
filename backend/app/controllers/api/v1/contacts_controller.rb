@@ -14,16 +14,18 @@ class Api::V1::ContactsController < Api::V1::ApplicationController
   end
 
   def create
-    manual_process(3, Contact, )
+    manual_process(3, Contact, contact_params)
   end
 
   def update
-    manual_process(4, Contact)
+    manual_process(4, Contact, contact_params)
   end
 
   def destroy
     manual_process(5, Contact)
   end
   private
-  
+  def contact_params
+    params.require(:contact).permit(:title,:detail,:status)
+  end
 end

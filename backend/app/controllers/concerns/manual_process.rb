@@ -13,8 +13,9 @@ module ManualProcess
         when 5 then # destroy
             model_name.destroy(params[:id])
         when 6 then # follow
+            model_name.follows
         when 7 then # follower
-
+            model_name.followers
         else
         end
     end
