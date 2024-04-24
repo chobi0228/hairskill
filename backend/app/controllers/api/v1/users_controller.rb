@@ -3,6 +3,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def login
+    render json: "hello"
   end
   
   def index
