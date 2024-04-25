@@ -1,0 +1,14 @@
+@use "./mixins/layout_mixin";
+@use "./layouts/flame";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+.contaiainer {
+  width: 100%;
+  padding: 80px 0;
+  overflow: hidden;
+  min-height: 100vh;
+}
