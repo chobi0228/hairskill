@@ -1,0 +1,19 @@
+@mixin useHeaderOrFooter($setting_position) {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @if $setting_position == "top" {
+        top: 0;
+    }
+    @if $setting_position == "bottom" {
+        bottom: 0;
+    }
+    width: 100%;
+    height: 80px;
+    font-size: xx-large;
+    font-family: serif;
+    color: beige;
+    background-color: #ff9800;
+    box-shadow: 0 0 10px #333;
+  }

@@ -1,0 +1,7 @@
+@import "../mixins/layout_mixin";
+header{
+    @include useHeaderOrFooter("top")
+}
+footer{
+    @include useHeaderOrFooter("bottom")
+}

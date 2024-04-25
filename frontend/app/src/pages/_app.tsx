@@ -4,12 +4,12 @@ import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <div className="container">
-        <header className="header">HairSkill</header>
+    <div className="container">
+      <header>HairSkill</header>
+      <main>
         <Component {...pageProps} />
-        <footer className="footer"></footer>
-      </div>
-    </>
+      </main>
+      <footer></footer>
+    </div>
   );
 }
