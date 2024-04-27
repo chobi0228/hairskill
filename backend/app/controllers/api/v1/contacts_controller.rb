@@ -22,7 +22,7 @@ class Api::V1::ContactsController < Api::V1::ApplicationController
   end
 
   def destroy
-    manual_process(5, Contact)
+    manual_process(5, Contact, contact_params)
   end
   private
   def contact_params
