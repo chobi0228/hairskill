@@ -1,5 +1,7 @@
 class Api::V1::ContactsController < Api::V1::ApplicationController
   extend ManualProcess
+  def new
+  end
 
   def index
     manual_process(1, Contact)
