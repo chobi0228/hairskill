@@ -17,4 +17,10 @@
     background-color: #fff;
     box-shadow: 0 0 10px #333;
 
-  }
+}
+@mixin useTopPageNavigation($background-color){
+    padding: 10%;
+    margin: 10px 0;
+    background-color: $background-color;
+
+}

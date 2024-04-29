@@ -14,9 +14,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="top">
-        <div className="top__navigation}">
-          <Link href={"/users/login"}>アカウントをお持ちの方はこちら</Link>
-          <Link href={"/users/sign_up"}>アカウントをお持ちでない方はこちら</Link>
+        <div className="top__navigation">
+          <Link href={"/users/login"} className="top__navigation__login">ログイン</Link>
+          <Link href={"/users/sign_up"} className="top__navigation__sign_up">サインアップ</Link>
+          <Link href={"/users/sign_up"} className="top__navigation__contact">お問い合わせ</Link>
         </div>
       </section>
     </>

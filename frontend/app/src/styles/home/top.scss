@@ -1,3 +1,24 @@
+@import "../mixins/layout_mixin";
 .top {
-width: 100%;
+    width: 100%;
+    text-align: center;
+    @media (max-width: 500px) {
+        margin: 50% auto;
+    }
+    &__navigation {
+        width: 40%;
+        text-align: center;
+        display: inline-grid;
+
+        &__login {
+            @include useTopPageNavigation(aqua);
+        }
+        &__sign_up {
+            @include useTopPageNavigation( aquamarine);
+        }
+        &__contact {
+            @include useTopPageNavigation( coral);
+        }
+    }
+
 }
