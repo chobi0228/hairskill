@@ -1,6 +1,6 @@
 import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
-import {generalWordSettings} from "../constants/general";
+import {urls, generalWordSettings} from "../constants/general";
 
 
 export default function App({ Component, pageProps }: AppProps) {
