@@ -3,3 +3,4 @@ export const generalWordSettings = {
     //アプリケーションタイトル
     aplicaton_title: "HairSkill"
 } as const;
+// console.log(generalWordSettings.aplicaton_title)
