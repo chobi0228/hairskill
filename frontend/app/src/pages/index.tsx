@@ -1,5 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
+import React, { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Home() {
   return (
@@ -10,9 +13,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-        <h1>AAA</h1>
-
+      <section className="top">
+        <div className="top__navigation}">
+          <Link href={"/users/login"}>アカウントをお持ちの方はこちら</Link>
+          <Link href={"/users/sign_up"}>アカウントをお持ちでない方はこちら</Link>
+        </div>
+      </section>
     </>
   );
 }

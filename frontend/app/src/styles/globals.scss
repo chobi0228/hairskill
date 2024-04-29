@@ -3,20 +3,21 @@
 * {
   margin: 0;
   padding: 0;
+  color: #000;
   list-style: none;
   box-sizing: border-box;
-  color: #000;
 }
 html,body{
-  min-height: 100vh;
   background-color: #f5f5dcf7;
+  min-height: 100vh;
 }
 .contaiainer {
-  position: relative;
   width: 100%;
-  padding: 80px 0;
-  overflow: hidden;
+  min-height: 100vh;
+  position: relative;
 }
 main {
+  height: 100%;
   padding: 80px 0;
+  min-height: 100vh;
 }

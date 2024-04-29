@@ -1,4 +1,5 @@
 import "@/styles/globals.scss";
+import "@/styles/home/top.scss";
 import type { AppProps } from "next/app";
 import {urls, generalWordSettings} from "../constants/general";
 import Header from "./all/components/header.component";
