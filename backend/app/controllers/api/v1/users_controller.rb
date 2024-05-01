@@ -13,20 +13,22 @@ class Api::V1::UsersController < Api::V1::ApplicationController
     #               }
     # end
     user = User
-    if user.find_by(name: params[:name], password: params[:password], email: params[:email],  role: params[:role], gender: params[:gender], authority: 0)
+    if current_user = user.find_by(name: params[:name], password: params[:password], email: params[:email],  role: params[:role], gender: params[:gender], authority: 0)
       response =  {
+                    "current_user"=>current_user,
                     "params" => params,
-                    "result" => "1"#既存
+                    "result" => "アカウントは存在しています。"
                   }
-    elsif user.create(name: params[:name], password: params[:password], email: params[:email],  role: params[:role], gender: params[:gender], authority: 0)
+    elsif current_user = user.create(name: params[:name], password: params[:password], email: params[:email],  role: params[:role], gender: params[:gender], authority: 0)
       response =  {
+                    "current_user"=>current_user,
                     "params" => params,
-                    "result" => "2"#新規登録
+                    "result" => "アカウントの新規登録に成功しました"
                   }
     else
       response =  {
                     "params" => params,
-                    "result" => "3"#登録失敗
+                    "result" => "アカウントの新規登録に失敗しました。"#
                   }
     end
 
