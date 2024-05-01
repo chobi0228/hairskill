@@ -1,5 +1,5 @@
 @import "../mixins/layout_mixin";
-header{
+.header{
     @include useHeaderOrFooter("top")
 }
 footer{
