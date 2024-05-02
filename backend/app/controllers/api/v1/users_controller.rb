@@ -1,34 +1,27 @@
 class Api::V1::UsersController < Api::V1::ApplicationController
   def sign_up
     # byebug
-    # if User.find_or_create_by(name: params[:name], password: params[:password], email: params[:email],  role: params[:role], gender: params[:gender], authority: 0)
-    #   response =  {
-    #                 "params" => params,
-    #                 "result" => "1"
-    #               }
-    # else
-    #   response =  {
-    #                 "params" => params,
-    #                 "result" => "2"
-    #               }
-    # end
+
     user = User
     if current_user = user.find_by(name: params[:name], password: params[:password], email: params[:email],  role: params[:role], gender: params[:gender], authority: 0)
       response =  {
+                    "result" => 1,
                     "current_user"=>current_user,
                     "params" => params,
-                    "result" => "アカウントは存在しています。"
+                    "message" => "アカウントは存在しています。"
                   }
     elsif current_user = user.create(name: params[:name], password: params[:password], email: params[:email],  role: params[:role], gender: params[:gender], authority: 0)
       response =  {
+                    "result" => 2,
                     "current_user"=>current_user,
                     "params" => params,
-                    "result" => "アカウントの新規登録に成功しました"
+                    "message" => "アカウントの新規登録に成功しました"
                   }
     else
       response =  {
+                    "result" => 3,
                     "params" => params,
-                    "result" => "アカウントの新規登録に失敗しました。"#
+                    "message" => "アカウントの新規登録に失敗しました。"
                   }
     end
 
