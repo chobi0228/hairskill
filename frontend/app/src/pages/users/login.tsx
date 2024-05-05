@@ -1,4 +1,4 @@
-import {urls, generalWordSettings} from "../../constants/general";
+import {urls, generalWordSetting} from "../../constants/general";
 
 // import { getAuthJSON} from "../../services/api"
 import axios from "axios";
