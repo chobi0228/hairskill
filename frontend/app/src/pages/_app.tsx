@@ -5,23 +5,19 @@ import type { AppProps } from "next/app";
 import Header from "./all/components/header.component";
 import Footer from "./all/components/footer.component";
 import React, { useState, useEffect } from "react";
-import {generalFlag} from "../general_variable/general";
+import {getSaveData} from "../constants/local_storage"
+
 
 
 export default function App({ Component, pageProps }: AppProps) {
-  // useEffect(()=>{
-  //   if(globalThis.localStorage.CURRENT_USER_ID){
-  //     generalFlag.loginFlag = true;
-  //   }
-  // },[])
-  // if(!globalThis.localStorage.CURRENT_USER_ID){
+  const current_user_id = getSaveData("CURRENT_USER_ID")
     return (
       <div className="container">
         <Header/>
         <main>
           <Component {...pageProps} />
         </main>
-        <Footer loginFlag={generalFlag.loginFlag}/>
+        <Footer/>
       </div>
     );
   // } else {

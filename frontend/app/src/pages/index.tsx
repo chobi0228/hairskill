@@ -3,17 +3,28 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import {urls, generalWordSetting} from "../constants/general";
-import {generalFlag} from "../general_variable/general";
+import {getSaveData} from "../constants/local_storage"
 
 
 export default function Home() {
+  const current_user_id = getSaveData("CURRENT_USER_ID")
 
-  useEffect(()=>{
-    if(globalThis.localStorage.CURRENT_USER_ID){
-      generalFlag.loginFlag = true;
-    }
-  },[])
-  if(generalFlag.loginFlag == true){
+
+  
+  if(current_user_id){
+    return (
+      <>
+        <Head>
+          <title>Create Next App</title>
+          <meta name="description" content="Hairskill APlication" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <h1>TOP</h1>
+      </>
+    );
+  } else {
+
     return (
       <>
         <Head>
@@ -32,17 +43,6 @@ export default function Home() {
         </section>
       </>
     );
-  } else {
-    return (
-      <>
-        <Head>
-          <title>Create Next App</title>
-          <meta name="description" content="Hairskill APlication" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <h1>TOP</h1>
-      </>
-    );
+
   }
 }
