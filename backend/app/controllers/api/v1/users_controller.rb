@@ -3,14 +3,14 @@ class Api::V1::UsersController < Api::V1::ApplicationController
     # byebug
 
     user = User
-    if current_user = user.find_by(name: params[:name], password: params[:password], email: params[:email],  role: params[:role], gender: params[:gender], authority: 0)
+    if current_user = user.find_by(name: params[:name], password: params[:password], email: params[:email])
       response =  {
                     "result" => 1,
                     "current_user"=>current_user,
                     "params" => params,
                     "message" => "アカウントは存在しています。"
                   }
-    elsif current_user = user.create(name: params[:name], password: params[:password], email: params[:email],  role: params[:role], gender: params[:gender], authority: 0)
+    elsif current_user = user.create(name: params[:name], password: params[:password], email: params[:email])
       response =  {
                     "result" => 2,
                     "current_user"=>current_user,

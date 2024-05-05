@@ -7,8 +7,7 @@ export default function SignUP() {
     const [password, setPassword] = useState('');
     const [one_more_password, setOneMorePassword] = useState('');
     const [email, setEmail] = useState('');
-    const [role, setRole] = useState('');
-    const [gender, setGender] = useState('');
+
 
 
     const postSignUpJSON = async (e: any) => {
@@ -17,8 +16,6 @@ export default function SignUP() {
         password: password,
         one_more_password: one_more_password,
         email: email,
-        role: role,
-        gender: gender,
       };
       try {
         if(inputSignUPData.name === "" || inputSignUPData.password === "" || inputSignUPData.one_more_password === "" || inputSignUPData.email === ""){
@@ -67,10 +64,6 @@ export default function SignUP() {
           <input type="text"value={one_more_password} onChange={(e) => setOneMorePassword(e.target.value)}/>
           <label htmlFor="input_email">メールアドレス</label>
           <input type="text"value={email} onChange={(e) => setEmail(e.target.value)}/>
-          <label htmlFor="input_role">役割</label>
-          <input type="text"value={role} onChange={(e) => setRole(e.target.value)}/>
-          <label htmlFor="input_gender">性別</label>
-          <input type="text"value={gender} onChange={(e) => setGender(e.target.value)}/>
           <input type="submit" value="新規登録" onClick={postSignUpJSON}/>
         </form>
       </>
