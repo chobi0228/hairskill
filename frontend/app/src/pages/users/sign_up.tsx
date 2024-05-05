@@ -1,7 +1,6 @@
 import {urls, generalWordSetting, generalConstant} from "../../constants/general";
 import axios from "axios";
-import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 
 export default function SignUP() {
     const [name, setName] = useState('');
@@ -31,8 +30,7 @@ export default function SignUP() {
               const response = await axios.post(urls.signUp, inputSignUPData);
               //localStorageでログイン情報を管理
               globalThis.localStorage.setItem('CURRENT_USER_ID', response.data.current_user.id);
-              globalThis.document.location.replace("/")
-              // redirect("/simple/thanks");
+              globalThis.document.location.replace(`/users/show/${response.data.current_user.id}`)
             }
           }
         } catch (err) {
