@@ -1,4 +1,4 @@
-import {getSaveData} from "./local_storage"
+// import {getSaveData} from "./local_storage"
 
 export const base_url = {
     //エンドポイント
@@ -18,6 +18,7 @@ export const generalWordSetting = {
 } as const;
 // アプリケーションでよく使われる定数
 export const generalConstant = {
+    // current_user_id:getSaveData("CURRENT_USER_ID")
     // current_user_id: global.localStorage.CURRENT_USER_ID ? global.localStorage.CURRENT_USER_ID : null
 } as const;
 
