@@ -1,4 +1,4 @@
-import {urls, generalWordSetting} from "../../../constants/general";
+import {urls, general_word_setting} from "../../../constants/general";
 import React, { useState, useEffect } from "react";
 import {getSaveData} from "../../../constants/local_storage"
 

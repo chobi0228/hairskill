@@ -3,8 +3,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users do
         collection do
-         get :login, :follows, :followers
-         post :sign_up
+         get :follows, :followers
+         post :sign_up, :login
         end
       end
       resources :relationships, only: [:create, :destroy]

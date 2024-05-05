@@ -7,12 +7,13 @@ export const base_url = {
 } as const;
 // URL類
 export const urls = {
-    //エンドポイント
-    signUp: base_url.end_point + "users/sign_up",
+    sign_up: base_url.end_point + "users/sign_up",
+    login: base_url.end_point + "users/login",
+
 
 } as const;
 // アプリケーションでよく使われる語句
-export const generalWordSetting = {
+export const general_word_setting = {
     //アプリケーションタイトル
     aplicaton_title: "HairSkill"
 } as const;

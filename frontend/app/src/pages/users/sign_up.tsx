@@ -1,4 +1,4 @@
-import {urls, generalWordSetting, generalConstant} from "../../constants/general";
+import {urls, general_word_setting, generalConstant} from "../../constants/general";
 import axios from "axios";
 import React, { useState } from "react";
 
@@ -12,37 +12,48 @@ export default function SignUP() {
 
 
     const postSignUpJSON = async (e: any) => {
-        const inputSignUPData : signUpParams = {
-          name: name,
-          password: password,
-          one_more_password: one_more_password,
-          email: email,
-          role: role,
-          gender: gender,
-        };
-        try {
-          if(inputSignUPData.name === "" || inputSignUPData.password === "" || inputSignUPData.one_more_password === "" || inputSignUPData.email === ""){
-            alert("名前、パスワード、確認用パスワード、メールアドレスは必須です。正しく入力されているか確認してください")
-          } else {
-            if (inputSignUPData.password !== inputSignUPData.one_more_password){
-              alert("パスワードが一致しておりません。")
-            } else{
-              const response = await axios.post(urls.signUp, inputSignUPData);
+      const inputSignUPData : signUpParams = {
+        name: name,
+        password: password,
+        one_more_password: one_more_password,
+        email: email,
+        role: role,
+        gender: gender,
+      };
+      try {
+        if(inputSignUPData.name === "" || inputSignUPData.password === "" || inputSignUPData.one_more_password === "" || inputSignUPData.email === ""){
+          alert("名前、パスワード、確認用パスワード、メールアドレスは必須です。正しく入力されているか確認してください")
+        } else {
+          if (inputSignUPData.password !== inputSignUPData.one_more_password){
+            alert("パスワードが一致しておりません。")
+          } else{
+            const response = await axios.post(urls.sign_up, inputSignUPData);
+            //既存アカウントが確認される場合。
+            if (response.data.result === 1) {
+              alert(response.data.message)
+            }
+            //新規登録成功時
+            if(response.data.result === 2){
               //localStorageでログイン情報を管理
               globalThis.localStorage.setItem('CURRENT_USER_ID', response.data.current_user.id);
               globalThis.document.location.replace(`/users/show/${response.data.current_user.id}`)
             }
-          }
-        } catch (err) {
-          let message;
-          if (axios.isAxiosError(err) && err.response) {
-            console.error(err.response.data.message);
-          } else {
-            message = String(err);
-            console.error(message);
+            //新規登録に失敗
+            if (response.data.result === 3) {
+              alert(response.data.message)
+            }
           }
         }
-      };
+      } catch (err) {
+        let message;
+        if (axios.isAxiosError(err) && err.response) {
+          console.error(err.response.data.message);
+        } else {
+          message = String(err);
+          console.error(message);
+        }
+      }
+    };
 
 
     return (

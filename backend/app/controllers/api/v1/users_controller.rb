@@ -29,7 +29,23 @@ class Api::V1::UsersController < Api::V1::ApplicationController
   end
 
   def login
-    render json: "hello"
+    user = User
+    if current_user = user.find_by(name: params[:name], password: params[:password])
+      response =  {
+                    "result" => 1,
+                    "current_user"=>current_user,
+                    "params" => params,
+                    "message" => "ログインしました。"
+                  }
+    else
+      response =  {
+                    "result" => 1,
+                    "current_user"=>current_user,
+                    "params" => params,
+                    "message" => "ログインに失敗しました。"
+                  }
+    end
+      render json: response
   end
   
   def index
