@@ -1,4 +1,5 @@
 class Api::V1::UsersController < Api::V1::ApplicationController
+  extend ManualProcess
   def sign_up
     # byebug
 
@@ -55,35 +56,30 @@ class Api::V1::UsersController < Api::V1::ApplicationController
   end
 
   def show
+    manual_process(2, User)
   end
 
   def edit
+    manual_process(3, User)
   end
 
   def create
-    # byebug
-    # 引数の条件に該当するデータがあればそれを返す。なければ新規作成する
-    # user = User.find_or_create_by(id: params[:id], name: params[:name], email: params[:email], authority: 0, role: params[:role], gender: params[:gender], password: params[:password])                      
-    # if user
-    #   head :ok
-    # else
-    #   render json: { error: "ログインに失敗しました" }, status: :unprocessable_entity
-    # end
-    # rescue StandardError => e
-    #   render json: { error: e.message }, status: :internal_server_error
-    # end
 
   end
 
   def update
+    manual_process(4,  User, user_params)
   end
 
   def destroy
+    manual_process(5,  User, user_params)
   end
-
+  
   def followers
+    manual_process(6,  User)
   end
-
+  
   def follow
+    manual_process(7,  User)
   end
 end
