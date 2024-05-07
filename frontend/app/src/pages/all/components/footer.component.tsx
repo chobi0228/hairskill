@@ -4,7 +4,11 @@ import {getSaveData} from "../../../constants/local_storage"
 import Link from "next/link";
 export default function Footer() {
   
-  const current_user_id = getSaveData("CURRENT_USER_ID")  
+  const current_user_id = getSaveData("CURRENT_USER_ID")
+  const isLogOutLink = async (e: any) => {
+    globalThis.localStorage.removeItem('CURRENT_USER_ID');
+    globalThis.document.location.replace("/")
+  }
   if(current_user_id){
     return (
       <>
@@ -14,6 +18,7 @@ export default function Footer() {
             <Link href={"/posts/"} className="">Post</Link>
             <Link href={"/calendars/"} className="">Calendar</Link>
             <Link href={"/contacts/new"} className="">Contact</Link>
+            <Link href={"/"} className="" onClick={isLogOutLink}>LogOut</Link>
         </footer>
       </>
     );
