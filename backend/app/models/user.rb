@@ -6,7 +6,6 @@ class User < ApplicationRecord
     has_many :posts, dependent: :destroy
     has_many :nices, dependent: :destroy
     has_many :contacts, dependent: :destroy
-    has_many :calendar, dependent: :destroy
     attr_accessor :remember_token
 
     # ランダムな記憶トークンを返す

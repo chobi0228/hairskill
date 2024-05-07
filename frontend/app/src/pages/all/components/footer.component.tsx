@@ -16,7 +16,6 @@ export default function Footer() {
             <Link href={"/"} className="">Top</Link>
             <Link href={`/users/show/${current_user_id}`} className="">MyPage</Link>
             <Link href={"/posts/"} className="">Post</Link>
-            <Link href={"/calendars/"} className="">Calendar</Link>
             <Link href={"/contacts/new"} className="">Contact</Link>
             <Link href={"/"} className="" onClick={isLogOutLink}>LogOut</Link>
         </footer>

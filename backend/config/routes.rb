@@ -19,11 +19,6 @@ Rails.application.routes.draw do
         end
       end
       resources :nices, only: [:create, :destroy]
-      resources :calendars do
-        collection do
-          get :new
-        end
-      end
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
