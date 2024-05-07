@@ -1,15 +1,7 @@
 .auth_form{
-    display: grid;
-    width: 38%;
+    width: 100%;
+    height: 100%;
+    width: 40%;
     margin: 0% auto;
-    @media (max-width: 500px) {
-        margin: 10px auto;
 
-    }
-     input {
-        margin: 10px 0;
-        @media (min-width: 500px) {
-            margin: 10px 0;
-        }
-     }
 }

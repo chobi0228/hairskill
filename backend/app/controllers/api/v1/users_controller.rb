@@ -60,7 +60,7 @@ class Api::V1::UsersController < Api::V1::ApplicationController
   end
 
   def edit
-    manual_process(3, User)
+    manual_process(2, User)
   end
 
   def create

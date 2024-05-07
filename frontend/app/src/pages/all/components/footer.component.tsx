@@ -8,7 +8,15 @@ export default function Footer() {
   if(current_user_id){
     return (
       <>
-        <footer></footer>
+        <footer>
+          <ul>
+            <li>Top</li>
+            <li>MyPage</li>
+            <li>Post</li>
+            <li>Calendar</li>
+            <li>Contact</li>
+          </ul>
+        </footer>
       </>
     );
   }

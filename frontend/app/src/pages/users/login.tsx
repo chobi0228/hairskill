@@ -1,5 +1,6 @@
 import {urls, general_word_setting} from "../../constants/general";
 import React, { useState } from "react";
+import Link from "next/link";
 
 // import { getAuthJSON} from "../../services/api"
 import axios from "axios";
@@ -42,9 +43,13 @@ export default function Login() {
         <input type="text"value={name} onChange={(e) => setName(e.target.value)}/>
         <label htmlFor="input_passeord">パスワード</label>
         <input type="text"value={password} onChange={(e) => setPassword(e.target.value)}/>
-        <input type="submit" value="新規登録" onClick={postLoginJSON}/>
+        <input type="submit" value="アクセス" onClick={postLoginJSON}/>
 
       </form>
+        <div>
+          <Link href={"/users/sign_up"} className="">新規登録画面へ</Link><br/>
+          <Link href={"/"} className="">TOPページへ</Link>
+        </div>
     </>
   );
 }

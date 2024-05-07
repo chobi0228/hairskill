@@ -1,12 +1,15 @@
 @import "../mixins/layout_mixin";
 .top {
     width: 100%;
-    text-align: center;
-    @media (max-width: 500px) {
-        margin: 50% auto;
-    }
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // @media (max-width: 500px) {
+    //     margin: 50% auto;
+    // }
     &__navigation {
-        width: 40%;
+        width: 60%;
         text-align: center;
         display: inline-grid;
 
