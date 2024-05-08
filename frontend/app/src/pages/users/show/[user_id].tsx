@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function UserShow() {
+  const current_user_id = getSaveData("CURRENT_USER_ID")
+
  const [profile, setProfile] = useState({}); // 初期状態を空のオブジェクトに設定
 
  useEffect(() => {
@@ -24,14 +26,23 @@ export default function UserShow() {
 
     fetchUser();
  }, []);
- if (!profile) {
-  return <div>Loading...</div>;
- } else{
-   return (
+ if(current_user_id){
+
+    if (!profile) {
+      return <div>Loading...</div>;
+    } else{
+      return (
+          <>
+            <Link href={`/users/edit/${profile.id}`} className="">編集</Link><br/>
+          </>
+      );
+    }
+  } else {
+    return (
       <>
-        <Link href={"/users/login"} className="">編集</Link><br/>
-        {/* ユーザープロファイル情報を表示するためのコンポーネントをここに追加 */}
+        <Link href={"/"} className="">ログインしてください</Link><br/>
       </>
-   );
- }
+  );
+
+  }
 }
