@@ -5,16 +5,10 @@ class Api::V1::PostsController < ApplicationController
   def new
   end
 
-  def show
+  def shousai
   end
 
-  def edit
-  end
-
-  def create
-  end
-
-  def update
+  def setting
   end
 
   def destroy

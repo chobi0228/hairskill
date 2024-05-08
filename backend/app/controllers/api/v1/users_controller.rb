@@ -48,12 +48,6 @@ class Api::V1::UsersController < Api::V1::ApplicationController
     end
       render json: response
   end
-  
-  def index
-  end
-
-  def new
-  end
 
   def profile
     response = {
@@ -67,18 +61,6 @@ class Api::V1::UsersController < Api::V1::ApplicationController
       "profile" => User.find(params[:id])
     }
     render json: response
-  end
-
-  def create
-
-  end
-
-  def update
-    manual_process(4,  User, user_params)
-  end
-
-  def destroy
-    manual_process(5,  User, user_params)
   end
   
   def followers
