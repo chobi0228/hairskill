@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       resources :users do
         collection do
          get :follows, :followers
-         post :sign_up, :login, :profile
+         post :sign_up, :login, :profile, :setting
         end
 
       end

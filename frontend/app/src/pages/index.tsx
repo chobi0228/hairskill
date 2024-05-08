@@ -12,17 +12,9 @@ export default function Home() {
 
   
   if(current_user_id){
-    return (
-      <>
-        <Head>
-          <title>Create Next App</title>
-          <meta name="description" content="Hairskill APlication" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <h1>TOP</h1>
-      </>
-    );
+    const timer = setTimeout(() => {
+      globalThis.document.location.replace(`/users/show/${current_user_id}`)
+    }, 0)
   } else {
 
     return (
