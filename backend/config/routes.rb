@@ -11,12 +11,12 @@ Rails.application.routes.draw do
       resources :relationships, only: [:create, :destroy]
       resources :contacts, only: [:create] do
         collection do
-          get :new
+          get :new, :index
         end
       end
       resources :posts do
         collection do
-          get :new
+          get :new, :index, :shousai, :setting
         end
       end
       resources :nices, only: [:create, :destroy]
