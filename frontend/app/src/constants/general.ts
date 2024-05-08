@@ -9,6 +9,7 @@ export const base_url = {
 export const urls = {
     sign_up: base_url.end_point + "users/sign_up",
     login: base_url.end_point + "users/login",
+    profile: base_url.end_point + "users/profile",
 
 
 } as const;

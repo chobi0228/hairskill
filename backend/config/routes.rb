@@ -4,8 +4,9 @@ Rails.application.routes.draw do
       resources :users do
         collection do
          get :follows, :followers
-         post :sign_up, :login
+         post :sign_up, :login, :profile
         end
+
       end
       resources :relationships, only: [:create, :destroy]
       resources :contacts, only: [:create] do

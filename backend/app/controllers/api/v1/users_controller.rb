@@ -55,8 +55,11 @@ class Api::V1::UsersController < Api::V1::ApplicationController
   def new
   end
 
-  def show
-    manual_process(2, User)
+  def profile
+    response = {
+      "profile" => User.find(params[:id])
+    }
+    render json: response
   end
 
   def edit
