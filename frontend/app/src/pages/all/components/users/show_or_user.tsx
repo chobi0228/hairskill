@@ -1,15 +1,15 @@
-import { urls } from "../../../constants/general";
-import { getSaveData } from "../../../constants/local_storage";
+import { urls } from "../../../../constants/general";
+import { getSaveData } from "../../../../constants/local_storage";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
-export default function UserEdit() {
+export default function UserShowOrEdit(show_or_edit: any) {
   const current_user_id = getSaveData("CURRENT_USER_ID")
 
-  const [profile, setProfile] = useState({});
+ const [profile, setProfile] = useState({}); // 初期状態を空のオブジェクトに設定
 
-  useEffect(() => {
+ useEffect(() => {
     const fetchUser = async () => {
       const _url = globalThis.location.href;
       const parts = _url.split('/');  
@@ -33,7 +33,7 @@ export default function UserEdit() {
     } else{
       return (
           <>
-            <h1>aaaa</h1>
+            <Link href={`/users/edit/${profile.id}`} className="">編集</Link><br/>
           </>
       );
     }

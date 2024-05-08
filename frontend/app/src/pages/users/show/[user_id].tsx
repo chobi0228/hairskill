@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function UserShow() {
   const current_user_id = getSaveData("CURRENT_USER_ID")
 
- const [profile, setProfile] = useState({}); // 初期状態を空のオブジェクトに設定
+ const [profile, setProfile] = useState({});
 
  useEffect(() => {
     const fetchUser = async () => {
