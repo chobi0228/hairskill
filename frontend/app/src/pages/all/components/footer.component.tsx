@@ -13,7 +13,6 @@ export default function Footer() {
     return (
       <>
         <footer>
-            <Link href={"/"} className="">Top</Link>
             <Link href={`/users/show/${current_user_id}`} className="">MyPage</Link>
             <Link href={"/posts/"} className="">Post</Link>
             <Link href={"/contacts/new"} className="">Contact</Link>
